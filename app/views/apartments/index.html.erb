@@ -23,7 +23,7 @@
   <tbody>
     <tr ng-repeat="apartment in apartments | orderBy:sortName:sortDirection">
       <td>{{ apartment.num }}</td>
-      <td><a href="/project/{{apartment.project.id}}">{{ apartment.project.name }}</a></td>
+      <td><a href="/projects/{{apartment.project.id}}">{{ apartment.project.name }}</a></td>
       <td>{{ apartment.apartment_type }}</td>
       <td>{{ apartment.general_square }}</td>
       <td>{{ apartment.living_square }}</td>

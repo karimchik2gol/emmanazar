@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  passport: MyString
+  card_number: MyString
+  bord_date: 2017-01-15 15:24:56
+
+two:
+  passport: MyString
+  card_number: MyString
+  bord_date: 2017-01-15 15:24:56

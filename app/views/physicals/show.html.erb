@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Passport:</strong>
+  <%= @physical.passport %>
+</p>
+
+<p>
+  <strong>Card number:</strong>
+  <%= @physical.card_number %>
+</p>
+
+<p>
+  <strong>Bord date:</strong>
+  <%= @physical.born_date %>
+</p>
+
+<%= link_to 'Edit', edit_physical_path(@physical) %> |
+<%= link_to 'Back', physicals_path %>

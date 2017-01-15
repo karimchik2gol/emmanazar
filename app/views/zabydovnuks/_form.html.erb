@@ -1,0 +1,27 @@
+<%= form_for(zabydovnuk) do |f| %>
+  <% if zabydovnuk.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(zabydovnuk.errors.count, "error") %> prohibited this zabydovnuk from being saved:</h2>
+
+      <ul>
+      <% zabydovnuk.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :years_on_market %><br/>
+    <%= f.number_field :years_on_market %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.array! @order_yurists, partial: 'order_yurists/order_yurist', as: :order_yurist

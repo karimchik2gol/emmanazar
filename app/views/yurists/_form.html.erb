@@ -1,0 +1,27 @@
+<%= form_for(yurist) do |f| %>
+  <% if yurist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(yurist.errors.count, "error") %> prohibited this yurist from being saved:</h2>
+
+      <ul>
+      <% yurist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :person_id %><br/>
+    <%= f.collection_select :person_id, Person.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @broker.name %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @broker.education %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @broker.experience %>
+</p>
+
+<p>
+  <strong>Experience in firm:</strong>
+  <%= @broker.experience_in_firm %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @broker.rating %>
+</p>
+
+<p>
+  <strong>Percent for service:</strong>
+  <%= @broker.percent_for_service %>
+</p>
+
+<%= link_to 'Edit', edit_broker_path(@broker) %> |
+<%= link_to 'Back', brokers_path %>

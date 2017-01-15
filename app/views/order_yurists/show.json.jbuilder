@@ -1,0 +1,1 @@
+json.partial! "order_yurists/order_yurist", order_yurist: @order_yurist

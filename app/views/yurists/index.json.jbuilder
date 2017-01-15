@@ -1,0 +1,1 @@
+json.array! @yurists, partial: 'yurists/yurist', as: :yurist

@@ -1,0 +1,3 @@
+<% @apartments.each do |f| %>
+	<option value="<%= f.id %>">Номер квартиры: <%= f.num %>; к-во комнат: <%= f.room_count %>; этаж: <%= f.floor %>; жилая площадь: <%= f.living_square %>; цена: <%= f.price %></option>
+<% end %>

@@ -1,0 +1,1 @@
+json.array! @zabydovnuks, partial: 'zabydovnuks/zabydovnuk', as: :zabydovnuk

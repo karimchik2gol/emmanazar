@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Physicals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Passport</th>
+      <th>Card number</th>
+      <th>Bord date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @physicals.each do |physical| %>
+      <tr>
+        <td><%= link_to physical.person.name, physical.person %></td>
+        <td><%= physical.passport %></td>
+        <td><%= physical.card_number %></td>
+        <td><%= physical.born_date %></td>
+        <td><%= link_to 'Show', physical %></td>
+        <td><%= link_to 'Edit', edit_physical_path(physical) %></td>
+        <td><%= link_to 'Destroy', physical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Physical', new_physical_path %>

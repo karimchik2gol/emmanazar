@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @order_yurist.project_id %>
+</p>
+
+<p>
+  <strong>Apartment:</strong>
+  <%= @order_yurist.apartment_id %>
+</p>
+
+<p>
+  <strong>Yurist:</strong>
+  <%= @order_yurist.yurist_id %>
+</p>
+
+<%= link_to 'Edit', edit_order_yurist_path(@order_yurist) %> |
+<%= link_to 'Back', order_yurists_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Order Yurists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Apartment num</th>
+      <th>Yurist</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_yurists.each do |order_yurist| %>
+      <tr>
+        <td><%= order_yurist.project.name %></td>
+        <td><%= order_yurist.apartment.num %></td>
+        <td><%= order_yurist.yurist.name %></td>
+        <td><%= link_to 'Show', order_yurist %></td>
+        <td><%= link_to 'Edit', edit_order_yurist_path(order_yurist) %></td>
+        <td><%= link_to 'Destroy', order_yurist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order Yurist', new_order_yurist_path %>

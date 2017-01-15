@@ -1,0 +1,2 @@
+module OrderYuristsHelper
+end

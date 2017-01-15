@@ -1,0 +1,1 @@
+json.partial! "yurists/yurist", yurist: @yurist

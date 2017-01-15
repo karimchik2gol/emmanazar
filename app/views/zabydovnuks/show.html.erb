@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @zabydovnuk.name %>
+</p>
+
+<p>
+  <strong>Years on market:</strong>
+  <%= @zabydovnuk.years_on_market %>
+</p>
+
+<p>
+  <strong>Projects count:</strong>
+  <%= @zabydovnuk.projects_count %>
+</p>
+
+
+<h3>Projects</h3>
+<%= render "projects/projects_table" %>
+
+<%= link_to 'Edit', edit_zabydovnuk_path(@zabydovnuk) %> |
+<%= link_to 'Back', zabydovnuks_path %>

@@ -5,6 +5,10 @@ class ApartmentsController < ApplicationController
   # GET /apartments.json
   def index
     @apartments = Apartment.all
+    respond_to do |format|
+      format.html
+      format.json { render :json => @apartments.to_json(:include => { :project => { :only => [:id, :name] } }) }
+    end
   end
 
   # GET /apartments/1

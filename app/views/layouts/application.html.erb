@@ -41,7 +41,9 @@
   	}
   </style>
 
-  <body>
+  <%= yield(:angularjsapp) if content_for?(:angularjsapp) %>
+  
+  <body ng-app="main">
   	<div class="wrapper">
   		<ul class="menu">
 	  		<li><%= link_to "Люди", people_path %></li>

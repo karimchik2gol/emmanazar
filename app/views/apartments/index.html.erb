@@ -1,38 +1,39 @@
+<% content_for :angularjsapp do %>
+  <%= javascript_include_tag "app.js" %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <h1>Apartments</h1>
-
-<table>
+<style type="text/css">th { cursor: pointer;} </style>
+<table ng-controller="MainCtrl">
   <thead>
     <tr>
-      <th>Num</th>
-      <th>Project</th>
-      <th>Apartment type</th>
-      <th>General square</th>
-      <th>Living square</th>
-      <th>Floor</th>
-      <th>Room count</th>
-      <th>Price</th>
+      <th ng-click="sortData('num')">Num</a></th>
+      <th ng-click="sortData('project.name')">Project</th>
+      <th ng-click="sortData('apartment_type')">Apartment type</a></th>
+      <th ng-click="sortData('general_square')">General square</a></th>
+      <th ng-click="sortData('living_square')">Living square</a></th>
+      <th ng-click="sortData('floor')">Floor</a></th>
+      <th ng-click="sortData('room_count')">Room count</a></th>
+      <th ng-click="sortData('price')">Price</a></th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @apartments.each do |apartment| %>
-      <tr>
-        <td><%= apartment.num %></td>
-        <td><%= link_to apartment.project.name, apartment.project %></td>
-        <td><%= apartment.apartment_type %></td>
-        <td><%= apartment.general_square %></td>
-        <td><%= apartment.living_square %></td>
-        <td><%= apartment.floor %></td>
-        <td><%= apartment.room_count %></td>
-        <td><%= apartment.price %></td>
-        <td><%= link_to 'Show', apartment %></td>
-        <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
-        <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <tr ng-repeat="apartment in apartments | orderBy:sortName:sortDirection">
+      <td>{{ apartment.num }}</td>
+      <td><a href="/project/{{apartment.project.id}}">{{ apartment.project.name }}</a></td>
+      <td>{{ apartment.apartment_type }}</td>
+      <td>{{ apartment.general_square }}</td>
+      <td>{{ apartment.living_square }}</td>
+      <td>{{ apartment.floor }}</td>
+      <td>{{ apartment.room_count }}</td>
+      <td>{{ apartment.price }}</td>
+      <td><a href="/apartment/{{apartment.id}}">Show</a></td>
+      <td><a href="/apartment/{{apartment.id}}/edit">Edit</a></td>
+      <td><a href="/apartment/{{apartment.id}}" data-method="delete" data-confirm="Are you sure?">Edit</a></td>
+    </tr>
   </tbody>
 </table>
 

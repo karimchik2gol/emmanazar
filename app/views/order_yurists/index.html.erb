@@ -16,7 +16,7 @@
     <% @order_yurists.each do |order_yurist| %>
       <tr>
         <td><%= order_yurist.project.name %></td>
-        <td><%= order_yurist.apartment.num %></td>
+        <td><%= link_to order_yurist.apartment.project.name, order_yurist.apartment %></td>
         <td><%= order_yurist.yurist.name %></td>
         <td><%= link_to 'Show', order_yurist %></td>
         <td><%= link_to 'Edit', edit_order_yurist_path(order_yurist) %></td>

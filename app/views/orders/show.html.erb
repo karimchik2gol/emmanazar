@@ -1,19 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Physical:</strong>
-  <%= @order.physical_id %>
+  <strong>Person:</strong>
+  <%= @order.physical.person.name %>
 </p>
 
 <p>
   <strong>Broker:</strong>
-  <%= @order.broker_id %>
+  <%= @order.broker.name %>
 </p>
 
+<% @apartment = @order.apartment %>
 <p>
-  <strong>Apartment:</strong>
-  <%= @order.apartment_id %>
+	<strong>Project name:</strong>
+	<%= @apartment.project.name %>
 </p>
+<p><strong>Номер квартиры:</strong> <%= @apartment.num %></p>
+<p><strong>К-во комнат:</strong> <%= @apartment.room_count %></p>
+<p><strong>Этаж:</strong> <%= @apartment.floor %></p>
+<p><strong>Жилая площадь:</strong> <%= @apartment.living_square %></p>
+<p><strong>Цена:</strong> <%= @apartment.price %></p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

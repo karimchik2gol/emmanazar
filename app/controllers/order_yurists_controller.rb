@@ -21,7 +21,7 @@ class OrderYuristsController < ApplicationController
   # GET /order_yurists/1/edit
   def edit
     @projects = Project.all
-    @apartments = @order_yurists.project.apartments
+    @apartments = @order_yurist.project.apartments
   end
 
   # POST /order_yurists

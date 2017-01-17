@@ -1,8 +1,12 @@
+<%= javascript_include_tag 'graphic' %>
+
+<div class="datas" data-cont="<%= OrderYurist.all.group_by {|order| order.created_at.to_date }.to_json %>"></div>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Order Yurists</h1>
 
-<table>
+<table id="datatable-buttons" class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Project</th>
@@ -27,5 +31,11 @@
 </table>
 
 <br>
+<div class="row m-l-10 m-b-10"><%= link_to 'New Order Yurist', new_order_yurist_path %></div>
+<br>
 
-<%= link_to 'New Order Yurist', new_order_yurist_path %>
+<h3>Orders statistic</h3>
+<div id="combine-chart">
+    <div id="order-stats" class="flot-chart" style="height: 320px;">
+    </div>
+</div>

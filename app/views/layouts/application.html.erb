@@ -6,56 +6,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
+    <% if params[:action] == "index" %>
+  		<%= stylesheet_link_tag 'datatable' %>
+	<% end %>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
   </head>
 
-  <style type="text/css">
-	body, .wrapper {
-	  	overflow: hidden;
-	}
-	h3{
-	    display: inline;
-	    border: 0;
-	    outline: 0;
-	}
-	table {
-		width: 100%;
-	}
-	th {
-		text-align: left;
-	}
-	button, input[type='submit'] {
-		margin: 10px 0;
-	}
-  	.menu {
-  		float: left;
-  		width: 230px;
-  		overflow: hidden;
-  	}
-  	.center {
-  		margin-left: 270px;
-  	}
-  	.field {
-  		margin-bottom: 10px;
-  	}
-  </style>
-
   <%= yield(:angularjsapp) if content_for?(:angularjsapp) %>
   
-  <body ng-app="main">
-  	<div class="wrapper">
-  		<ul class="menu">
-	  		<li><%= link_to "Люди", people_path %></li>
-	  		<li><%= link_to "Юридические лица", yurists_path %></li>
-	  		<li><%= link_to "Физические лица", physicals_path %></li>
-	  		<li><%= link_to "Проекты", projects_path %></li>
-	  		<li><%= link_to "Застройщик", zabydovnuks_path %></li>
-	  		<li><%= link_to "Квартиры", apartments_path %></li>
-	  		<li><%= link_to "Заказы Юридических лиц", order_yurists_path %></li>
-	  		<li><%= link_to "Брокеры", brokers_path %></li>
-	  		<li><%= link_to "Заказы физических лиц", orders_path %></li>
-	  	</ul>
+  <body class="fixed-left" <% if content_for?(:angularjsapp) %> ng-app="main"<% end %>>
+  	<div id="wrapper">
+  		<%= render "partials/menu" %>
 
 	  	<div class="center">
 	   		<%= yield %>

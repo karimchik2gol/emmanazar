@@ -1,57 +1,61 @@
-<%= form_for(apartment) do |f| %>
-  <% if apartment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(apartment.errors.count, "error") %> prohibited this apartment from being saved:</h2>
+<div class="row">
+  <div class="col-sm-11">
+    <%= form_for(apartment) do |f| %>
+      <% if apartment.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(apartment.errors.count, "error") %> prohibited this apartment from being saved:</h2>
 
-      <ul>
-      <% apartment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% apartment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :project_id %><br/>
-    <%= f.collection_select :project_id, Project.all, :id, :name %>
-  </div>
+      <div class="form-group">
+        <%= f.label :project_id %><br/>
+        <%= f.collection_select :project_id, Project.all, :id, :name, {}, { :class => "form-control select2" } %>
+      </div>
 
-  <div class="field">
-    <%= f.label :num %><br/>
-    <%= f.number_field :num %>
-  </div>
+      <div class="form-group">
+        <%= f.label :num %><br/>
+        <%= f.number_field :num, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :apartment_type %><br/>
-    <%= f.select :apartment_type, Apartment.all_type %>
-  </div>
+      <div class="form-group">
+        <%= f.label :apartment_type %><br/>
+        <%= f.select :apartment_type, Apartment.all_type, {}, { :class => "form-control select2" } %>
+      </div>
 
-  <div class="field">
-    <%= f.label :general_square %><br/>
-    <%= f.text_field :general_square %>
-  </div>
+      <div class="form-group">
+        <%= f.label :general_square %><br/>
+        <%= f.text_field :general_square, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :living_square %><br/>
-    <%= f.text_field :living_square %>
-  </div>
+      <div class="form-group">
+        <%= f.label :living_square %><br/>
+        <%= f.text_field :living_square, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :floor %><br/>
-    <%= f.number_field :floor %>
-  </div>
+      <div class="form-group">
+        <%= f.label :floor %><br/>
+        <%= f.number_field :floor, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :room_count %><br/>
-    <%= f.number_field :room_count %>
-  </div>
+      <div class="form-group">
+        <%= f.label :room_count %><br/>
+        <%= f.number_field :room_count, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :price %><br/>
-    <%= f.text_field :price %>
-  </div>
+      <div class="form-group">
+        <%= f.label :price %><br/>
+        <%= f.text_field :price, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success waves-effect waves-light btn-md">Submit</button>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

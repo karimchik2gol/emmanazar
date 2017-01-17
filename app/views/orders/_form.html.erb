@@ -1,35 +1,39 @@
-<%= form_for(order) do |f| %>
-  <% if order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+<div class="row">
+  <div class="col-sm-11">
+    <%= form_for(order) do |f| %>
+      <% if order.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-      <ul>
-      <% order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% order.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :physical_id %><br/>
-    <%= f.collection_select :physical_id, Physical.all, :id, :name %>
-  </div>
+      <div class="field">
+        <%= f.label :physical_id %><br/>
+        <%= f.collection_select :physical_id, Physical.all, :id, :name, {}, {:class => "form-control select2"} %>
+      </div>
 
-  <div class="field">
-    <%= f.label :broker_id %><br/>
-    <%= f.collection_select :broker_id, Broker.all, :id, :name %>
-  </div>
+      <div class="field">
+        <%= f.label :broker_id %><br/>
+        <%= f.collection_select :broker_id, Broker.all, :id, :name, {}, {:class => "form-control select2"} %>
+      </div>
 
-  <div class="field">
-    <%= f.label :apartment_id %><br/>
-    <% @apartments = Apartment.all %>
-    <select name="order[apartment_id]" id="order_apartment_id">
-      <%= render "projects/apartments_list" %>
-    </select> 
-  </div>
+      <div class="field">
+        <%= f.label :apartment_id %><br/>
+        <% @apartments = Apartment.all %>
+        <select name="order[apartment_id]" id="order_apartment_id" class="form-control select2">
+          <%= render "projects/apartments_list" %>
+        </select> 
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success waves-effect waves-light btn-md">Submit</button>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

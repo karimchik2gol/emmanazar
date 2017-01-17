@@ -2,7 +2,7 @@
 
 <h1>Brokers</h1>
 
-<table>
+<table id="datatable-buttons" class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -24,7 +24,7 @@
         <td><%= broker.experience_in_firm %></td>
         <td><%= broker.rating %></td>
         <td><%= broker.percent_for_service %></td>
-        <td><button class="calculate-earnings" data-id="<%= broker.id %>">Calculate earnings</button></td>
+        <td><button class="calculate-earnings btn btn-info" data-id="<%= broker.id %>">Calculate earnings</button></td>
         <td><%= link_to 'Show', broker %></td>
         <td><%= link_to 'Edit', edit_broker_path(broker) %></td>
         <td><%= link_to 'Destroy', broker, method: :delete, data: { confirm: 'Are you sure?' } %></td>

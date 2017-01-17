@@ -1,47 +1,51 @@
-<%= form_for(broker) do |f| %>
-  <% if broker.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(broker.errors.count, "error") %> prohibited this broker from being saved:</h2>
+<div class="row">
+  <div class="col-sm-11">
+    <%= form_for(broker) do |f| %>
+      <% if broker.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(broker.errors.count, "error") %> prohibited this broker from being saved:</h2>
 
-      <ul>
-      <% broker.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% broker.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br/>
-    <%= f.text_field :name %>
-  </div>
+      <div class="field">
+        <%= f.label :name %><br/>
+        <%= f.text_field :name, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :education %><br/>
-    <%= f.text_field :education %>
-  </div>
+      <div class="field">
+        <%= f.label :education %><br/>
+        <%= f.text_field :education, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :experience %><br/>
-    <%= f.number_field :experience %>
-  </div>
+      <div class="field">
+        <%= f.label :experience %><br/>
+        <%= f.number_field :experience, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :experience_in_firm %><br/>
-    <%= f.number_field :experience_in_firm %>
-  </div>
+      <div class="field">
+        <%= f.label :experience_in_firm %><br/>
+        <%= f.number_field :experience_in_firm, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :rating %><br/>
-    <%= f.text_field :rating %>
-  </div>
+      <div class="field">
+        <%= f.label :rating %><br/>
+        <%= f.text_field :rating, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :percent_for_service %><br/>
-    <%= f.text_field :percent_for_service %>
-  </div>
+      <div class="field">
+        <%= f.label :percent_for_service %><br/>
+        <%= f.text_field :percent_for_service, :class => "form-control inputmask" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success waves-effect waves-light btn-md">Submit</button>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

@@ -1,0 +1,11 @@
+/* 
+	*= require_self
+	*= require ./admin_to/admin.css
+	*= require ./admin_to/bootstrap.min.css
+	*= require ./admin_to/core.css
+	*= require ./admin_to/components.css
+	*= require ./admin_to/icons.css
+	*= require ./admin_to/pages.css.scss
+	*= require ./admin_to/menu.css
+	*= require ./admin_to/responsive.css
+*/

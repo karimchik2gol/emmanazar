@@ -1,37 +1,41 @@
-<%= form_for(order_yurist) do |f| %>
-  <% if order_yurist.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(order_yurist.errors.count, "error") %> prohibited this order_yurist from being saved:</h2>
+<div class="row">
+  <div class="col-sm-11">
+    <%= form_for(order_yurist) do |f| %>
+      <% if order_yurist.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(order_yurist.errors.count, "error") %> prohibited this order_yurist from being saved:</h2>
 
-      <ul>
-      <% order_yurist.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% order_yurist.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :project_id %><br/>
-    <%= f.collection_select :project_id, @projects, :id, :name %>
-  </div>
+      <div class="field">
+        <%= f.label :project_id %><br/>
+        <%= f.collection_select :project_id, @projects, :id, :name, {}, {:class => "form-control select2"} %>
+      </div>
 
-  <div class="field">
-    <%= f.label :apartment_id %><br/>
-    <select name="order_yurist[apartment_id]" id="order_yurist_apartment_id">
-      <%= render "projects/apartments_list" %>
-    </select> 
-  </div>
+      <div class="field">
+        <%= f.label :apartment_id %><br/>
+        <select name="order_yurist[apartment_id]" id="order_yurist_apartment_id" class="form-control select2">
+          <%= render "projects/apartments_list" %>
+        </select> 
+      </div>
 
-  <div class="field">
-    <%= f.label :yurist_id %><br/>
-    <%= f.collection_select :yurist_id, Yurist.all, :id, :name %>
-  </div>
+      <div class="field">
+        <%= f.label :yurist_id %><br/>
+        <%= f.collection_select :yurist_id, Yurist.all, :id, :name, {}, {:class => "form-control select2"} %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success waves-effect waves-light btn-md">Submit</button>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 
 <script type="text/javascript">
   $("#order_yurist_project_id").change(function() {

@@ -5,7 +5,7 @@
 
 <h1>Apartments</h1>
 <style type="text/css">th { cursor: pointer;} </style>
-<table ng-controller="MainCtrl">
+<table ng-controller="MainCtrl" id="datatable-buttons" class="table table-striped table-bordered">
   <thead>
     <tr>
       <th ng-click="sortData('num')">Num</th>
@@ -32,7 +32,7 @@
       <td>{{ apartment.price }}</td>
       <td><a href="/apartments/{{apartment.id}}">Show</a></td>
       <td><a href="/apartments/{{apartment.id}}/edit">Edit</a></td>
-      <td><a href="/apartments/{{apartment.id}}" data-method="delete" data-confirm="Are you sure?">Edit</a></td>
+      <td><a href="/apartments/{{apartment.id}}" data-method="delete" data-confirm="Are you sure?">Destroy</a></td>
     </tr>
   </tbody>
 </table>

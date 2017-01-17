@@ -10,4 +10,8 @@ Rails.application.config.assets.precompile += %w( app.js )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( datatable.js datatable.css graphic.css graphic.js)
+
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "plugins")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "pages")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "stylesheets", "fonts")

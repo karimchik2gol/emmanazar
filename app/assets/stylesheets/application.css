@@ -1,11 +1,11 @@
 /* 
 	*= require_self
-	*= require ./admin_to/admin.css
-	*= require ./admin_to/bootstrap.min.css
-	*= require ./admin_to/core.css
-	*= require ./admin_to/components.css
-	*= require ./admin_to/icons.css
-	*= require ./admin_to/pages.css.scss
-	*= require ./admin_to/menu.css
-	*= require ./admin_to/responsive.css
+	*= require ./admin_to/admin
+	*= require ./admin_to/bootstrap
+	*= require ./admin_to/core
+	*= require ./admin_to/components
+	*= require ./admin_to/icons
+	*= require ./admin_to/pages
+	*= require ./admin_to/menu
+	*= require ./admin_to/responsive
 */

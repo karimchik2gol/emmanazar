@@ -8,14 +8,14 @@
 <table ng-controller="MainCtrl">
   <thead>
     <tr>
-      <th ng-click="sortData('num')">Num</a></th>
+      <th ng-click="sortData('num')">Num</th>
       <th ng-click="sortData('project.name')">Project</th>
-      <th ng-click="sortData('apartment_type')">Apartment type</a></th>
-      <th ng-click="sortData('general_square')">General square</a></th>
-      <th ng-click="sortData('living_square')">Living square</a></th>
-      <th ng-click="sortData('floor')">Floor</a></th>
-      <th ng-click="sortData('room_count')">Room count</a></th>
-      <th ng-click="sortData('price')">Price</a></th>
+      <th ng-click="sortData('apartment_type')">Apartment type</th>
+      <th ng-click="sortData('general_square')">General square</th>
+      <th ng-click="sortData('living_square')">Living square</th>
+      <th ng-click="sortData('floor')">Floor</th>
+      <th ng-click="sortData('room_count')">Room count</th>
+      <th ng-click="sortData('price')">Price</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -36,6 +36,11 @@
     </tr>
   </tbody>
 </table>
+
+<p><strong>Average General square:</strong> <%= Apartment.average(:general_square) %></p>
+<p><strong>Average Living square:</strong> <%= Apartment.average(:living_square) %></p>
+<p><strong>Average Room count:</strong> <%= Apartment.average(:room_count) %></p>
+<p><strong>Average Price:</strong> <%= Apartment.average(:price) %></p>
 
 <br>
 

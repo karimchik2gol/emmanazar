@@ -12,6 +12,12 @@ class BrokersController < ApplicationController
   def show
   end
 
+  # GET /brokers/1/calculate
+  def calculate
+    broker = Broker.find(params[:id])
+    render json: broker.calculate.to_json
+  end
+
   # GET /brokers/new
   def new
     @broker = Broker.new

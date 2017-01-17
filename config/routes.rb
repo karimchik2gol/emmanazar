@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :orders
-  resources :brokers
+  resources :brokers do
+    get :calculate, on: :member
+  end
   resources :apartments
   resources :order_yurists
   resources :zabydovnuks
